@@ -1,0 +1,47 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "dependencies": {
+    "@fullcalendar/bootstrap": "^5.11.3",
+    "@fullcalendar/core": "^5.11.0",
+    "@kagronick/kgauge-vue": "^1.0.7",
+    "axios": "1.2",
+    "bootstrap": "4.3.1",
+    "bootstrap-vue": "2.23.1",
+    "css-loader": "^5.2.7",
+    "install": "^0.13.0",
+    "jquery": "3.6.1",
+    "mini-css-extract-plugin": "^1.6.2",
+    "node-sass": "^4.12.0",
+    "npm": "^8.7.0",
+    "popper.js": "^1.15.0",
+    "sass-loader": "^8.0.0",
+    "vee-validate": "3",
+    "vue": "^2.6.10",
+    "vue-chartjs": "^3.5.0",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "3.6.2",
+    "vuex-persistedstate": "^4.1.0",
+    "webpack": "^4.40.2",
+    "webpack-bundle-tracker": "^0.4.3",
+    "webpack-cli": "^3.3.9",
+    "webpack-merge": "^5.8.0",
+    "yarn": "^1.22.17"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "~6.0.1",
+    "connect-livereload": "~0.6.1",
+    "cssnano": "~4.1.11",
+    "pixrem": "~5.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "watch": "webpack --config webpack.dev.js --watch",
+    "build": "webpack --config webpack.prod.js --progress --colors",
+    "build:production": "NODE_ENV=production webpack --config webpack.prod.js --progress --colors"
+  }
+}
