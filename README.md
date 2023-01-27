@@ -61,7 +61,7 @@ Following the example on the *Installation* section:
 Clone the project
 
 ```bash
-  git clone https://link-to-project .
+  git clone https://github.com/fandemisterling100/Songs.git .
 ```
 
 Install dependencies
