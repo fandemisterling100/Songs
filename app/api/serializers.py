@@ -2,10 +2,10 @@ from allauth.utils import generate_unique_username
 from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from app.api.models import Song
 from app.api.utils import password_validator
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.hashers import make_password
-from app.api.models import Song
 
 User = get_user_model()
 
@@ -98,9 +98,8 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         )
         return super(UserRegisterSerializer, self).create(validated_data)
 
-        
+
 class SongSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Song
         fields = [

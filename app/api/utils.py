@@ -1,5 +1,7 @@
 import re
+
 from rest_framework import serializers
+
 from app.api.constants import PASSWORD_CHARACTERS, PASSWORD_LENGTH
 
 

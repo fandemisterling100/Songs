@@ -1,8 +1,10 @@
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.exceptions import AuthenticationFailed, InvalidToken
+
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
 
 def decode_simple_jwt_token(request):
     try:
@@ -13,6 +15,7 @@ def decode_simple_jwt_token(request):
         return validated_token
     except (AttributeError, InvalidToken, AuthenticationFailed):
         return {}
+
 
 def get_user(request):
     user = None

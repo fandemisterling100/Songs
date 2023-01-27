@@ -1,9 +1,10 @@
+from rest_framework.permissions import BasePermission
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.exceptions import AuthenticationFailed, InvalidToken
 from rest_framework_simplejwt.settings import api_settings
-from rest_framework.permissions import BasePermission
-from django.contrib.auth import get_user_model
+
 from app.users.utils import get_user
+from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
@@ -24,6 +25,7 @@ class CustomJWTAuthentication(JWTAuthentication):
             raise AuthenticationFailed("User not found", code="User_not_found")
 
         return user
+
 
 class UserIsAuthenticated(BasePermission):
     """

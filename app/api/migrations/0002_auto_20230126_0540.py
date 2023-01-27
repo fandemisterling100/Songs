@@ -3,30 +3,24 @@
 from django.db import migrations
 from app.api.constants import INITIAL_DATA
 
+
 def create_initial_songs(apps, schema_editor):
-    
-    Song = apps.get_model('api', 'Song')
-    User = apps.get_model('users', 'User')
-    
+
+    Song = apps.get_model("api", "Song")
+    User = apps.get_model("users", "User")
+
     initial_user = User.objects.create(
-        username="testuser",
-        email="testuser@gmail.com",
-        password="testpass123M!"
+        username="testuser", email="testuser@gmail.com", password="testpass123M!"
     )
 
     for song_data in INITIAL_DATA:
-        Song.objects.create(
-            private=False,
-            created_by=initial_user,
-            **song_data
-        )
+        Song.objects.create(private=False, created_by=initial_user, **song_data)
+
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
     ]
 
-    operations = [
-        migrations.RunPython(create_initial_songs)
-    ]
+    operations = [migrations.RunPython(create_initial_songs)]
